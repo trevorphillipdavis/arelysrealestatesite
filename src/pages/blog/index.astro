@@ -1,17 +1,55 @@
 ---
-// Notice the double dot-dot: ../../ instead of ../
-import '../../layouts/BaseLayout.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Real Estate News & Blog">
+<BaseLayout title="Real Estate News & Market Blog | Arelys Catena">
   <div class="max-w-7xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-slate-900 mb-2">Market Insights & News</h1>
-    <p class="text-slate-600 mb-8">Curated updates on local market conditions, buying tips, and home maintenance.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <article class="border border-slate-200 rounded-xl p-6 bg-white shadow-sm">
-        <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Market Report</span>
-        <h3 class="text-xl font-semibold text-slate-800 mt-2">Spring Housing Market Trends to Watch</h3>
-        <p class="text-slate-600 text-sm mt-2">A quick breakdown of inventory changes, mortgage rates, and what they mean for buyers and sellers this season.</p>
+    <div class="max-w-3xl mb-12">
+      <span class="text-[#C49A45] font-bold tracking-wider uppercase text-sm">Market Insights & News</span>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Real Estate Tips & Local Updates</h1>
+      <p class="text-slate-600 mt-2">Stay informed with expert advice on buying, selling, and navigating current housing market trends.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-[#C49A45]/10 text-[#C49A45] text-xs font-semibold px-2.5 py-0.5 rounded uppercase">Market Report</span>
+            <span class="text-slate-400 text-xs">June 2026</span>
+          </div>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2">Summer Housing Market Trends: What Buyers & Sellers Need to Know</h3>
+          <p class="text-slate-600 text-sm">An inside look at how shifting inventory levels and interest rates are impacting local property values this season.</p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-100">
+          <span class="text-sm font-semibold text-[#C49A45] hover:underline">Read Full Article &rarr;</span>
+        </div>
+      </article>
+
+      <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-[#C49A45]/10 text-[#C49A45] text-xs font-semibold px-2.5 py-0.5 rounded uppercase">Home Staging</span>
+            <span class="text-slate-400 text-xs">May 2026</span>
+          </div>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2">5 Simple Upgrades That Instantly Boost Your Home’s Value</h3>
+          <p class="text-slate-600 text-sm">Looking to sell soon? Discover cost-effective cosmetic updates that catch buyer attention and maximize your return on investment.</p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-100">
+          <span class="text-sm font-semibold text-[#C49A45] hover:underline">Read Full Article &rarr;</span>
+        </div>
+      </article>
+
+      <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-[#C49A45]/10 text-[#C49A45] text-xs font-semibold px-2.5 py-0.5 rounded uppercase">First-Time Buyers</span>
+            <span class="text-slate-400 text-xs">April 2026</span>
+          </div>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2">Navigating Your First Mortgage: A Step-by-Step Guide</h3>
+          <p class="text-slate-600 text-sm">From pre-approval letters to closing day costs, here is a clear roadmap to help first-time buyers feel confident through every phase.</p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-100">
+          <span class="text-sm font-semibold text-[#C49A45] hover:underline">Read Full Article &rarr;</span>
+        </div>
       </article>
     </div>
   </div>

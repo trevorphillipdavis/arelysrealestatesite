@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://trevorphillipdavis.github.io', // Replace with your actual GitHub username domain
+  site: 'https://trevorphillipdavis.github.io',
   base: '/arelysrealestatesite',
   integrations: [tailwind()],
 });
