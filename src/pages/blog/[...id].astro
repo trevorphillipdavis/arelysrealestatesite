@@ -31,9 +31,21 @@ const { Content } = await render(post);
         <p class="text-gray-600 text-base">{post.data.description}</p>
       </div>
 
-      <div class="prose prose-amber max-w-none text-gray-700 space-y-6 leading-relaxed">
+      <div class="prose prose-amber max-w-none text-gray-700 space-y-6 leading-relaxed blog-content">
         <Content />
       </div>
     </article>
   </main>
 </BaseLayout>
+
+<style>
+  /* Automatically bold and underline specific subheadings for all blog posts moving forward */
+  .blog-content :global(h3) {
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #111827;
+  }
+</style>
