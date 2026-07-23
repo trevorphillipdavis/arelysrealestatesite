@@ -1,56 +1,34 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout title="Local Real Estate News & Market Blog | Arelys Catena">
-  <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="max-w-3xl mb-12">
-      <span class="text-[#C49A45] font-bold tracking-wider uppercase text-sm">Market Insights & News</span>
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Real Estate Tips & Local Updates</h1>
-      <p class="text-slate-600 mt-2">Stay informed with expert advice on buying, selling, and navigating current housing market trends.</p>
+
+<BaseLayout title="Local Market News | Real Estate Tips & Updates">
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <div class="mb-12">
+      <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Market Insights & News</span>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2">Real Estate Tips & Local Updates</h1>
+      <p class="text-gray-600 mt-2">Stay informed with expert advice on buying, selling, and navigating current housing market trends.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
-        <div class="p-6">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-[#C49A45]/10 text-[#C49A45] text-xs font-semibold px-2.5 py-0.5 rounded uppercase">Market Report</span>
-            <span class="text-slate-400 text-xs">June 2026</span>
+      {posts.map((post) => (
+        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full">
+              {post.data.pubDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+            </span>
+            <h2 class="text-xl font-bold text-gray-900 mt-4 mb-2">{post.data.title}</h2>
+            <p class="text-gray-600 text-sm mb-6">{post.data.description}</p>
           </div>
-          <h3 class="text-xl font-semibold text-slate-900 mb-2">Summer Housing Market Trends: What Buyers & Sellers Need to Know</h3>
-          <p class="text-slate-600 text-sm">An inside look at how shifting inventory levels and interest rates are impacting local property values this season.</p>
+          <a href={`/blog/${post.id}`} class="text-amber-600 font-semibold hover:underline inline-flex items-center">
+            Read Full Article &rarr;
+          </a>
         </div>
-        <div class="px-6 pb-6 pt-2 border-t border-slate-100">
-          <span class="text-sm font-semibold text-[#C49A45] hover:underline">Read Full Article &rarr;</span>
-        </div>
-      </article>
-
-      <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
-        <div class="p-6">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-[#C49A45]/10 text-[#C49A45] text-xs font-semibold px-2.5 py-0.5 rounded uppercase">Home Staging</span>
-            <span class="text-slate-400 text-xs">May 2026</span>
-          </div>
-          <h3 class="text-xl font-semibold text-slate-900 mb-2">5 Simple Upgrades That Instantly Boost Your Home’s Value</h3>
-          <p class="text-slate-600 text-sm">Looking to sell soon? Discover cost-effective cosmetic updates that catch buyer attention and maximize your return on investment.</p>
-        </div>
-        <div class="px-6 pb-6 pt-2 border-t border-slate-100">
-          <span class="text-sm font-semibold text-[#C49A45] hover:underline">Read Full Article &rarr;</span>
-        </div>
-      </article>
-
-      <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
-        <div class="p-6">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-[#C49A45]/10 text-[#C49A45] text-xs font-semibold px-2.5 py-0.5 rounded uppercase">First-Time Buyers</span>
-            <span class="text-slate-400 text-xs">April 2026</span>
-          </div>
-          <h3 class="text-xl font-semibold text-slate-900 mb-2">Navigating Your First Mortgage: A Step-by-Step Guide</h3>
-          <p class="text-slate-600 text-sm">From pre-approval letters to closing day costs, here is a clear roadmap to help first-time buyers feel confident through every phase.</p>
-        </div>
-        <div class="px-6 pb-6 pt-2 border-t border-slate-100">
-          <span class="text-sm font-semibold text-[#C49A45] hover:underline">Read Full Article &rarr;</span>
-        </div>
-      </article>
+      ))}
     </div>
-  </div>
+  </main>
 </BaseLayout>
