@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Home Net Worth & Proceeds Calculator | Arelys Catena" 
+  description="Calculate your home equity and estimated seller net proceeds in South Florida with Arelys Catena's interactive property valuation tool."
+>
+  <main class="py-12 md:py-16 bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-8">
+        <span class="text-[#C59B27] font-bold tracking-wider uppercase text-xs sm:text-sm">Home Valuation Tool</span>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-1 mb-2">
+          What is Your Home Worth?
+        </h1>
+        <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+          Calculate your estimated net proceeds and explore home values across South Florida with our interactive seller net sheet.
+        </p>
+      </div>
+
+      <!-- Net Sheet Embed Wrapper -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8">
+        <div class="w-full">
+          <iframe 
+            src="https://trevorphillipdavis.github.io/netsheets/?edition=arelyswebsite"
+            style="width:100%; height:1800px; border:0; overflow:hidden;"
+            scrolling="no"
+            title="Seller Net Sheet"
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
