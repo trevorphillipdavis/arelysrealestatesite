@@ -1,32 +1,77 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = '/';
 ---
-<BaseLayout title="Arelys Catena | Century21 Real Estate Professional">
-  <!-- Hero -->
-  <section class="py-16 md:py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="text-[#C49A45] font-bold tracking-wider uppercase text-sm">Century21 Real Estate Professional</span>
-        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mt-2 mb-6">
-          Buy or Sell Your Next Home With Arelys Catena
+
+<BaseLayout 
+  title="Arelys Catena | South Florida Real Estate Expert" 
+  description="Find your dream home or sell your property with Arelys Catena, your trusted South Florida real estate expert serving Broward and Miami-Dade counties."
+>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 md:py-32 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <span class="bg-[#C59B27]/20 text-[#C59B27] border border-[#C59B27]/30 font-semibold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest inline-block mb-6">
+          South Florida Real Estate Professional
+        </span>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+          Your Trusted Partner in South Florida Real Estate
         </h1>
-        <p class="text-lg text-slate-600 mb-8">
-          Providing expert local market knowledge, unmatched negotiation skills, and dedicated personal service.
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Specializing in residential properties, market insights, and personalized guidance across Broward and Miami-Dade counties.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href={`/search`} class="bg-[#C49A45] text-black font-semibold px-6 py-3 rounded-lg text-center hover:bg-[#b0883d] transition shadow-md">
-            Search MLS Listings
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/search" class="bg-[#C59B27] hover:bg-[#b0881f] text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition-all duration-200">
+            Search Homes Now
+          </a>
+          <a href="tel:9542923366" class="bg-white/15 hover:bg-white/25 text-white border border-white/20 font-semibold px-8 py-3.5 rounded-xl backdrop-blur-sm transition-all duration-200">
+            <i class="fa-solid fa-phone text-[#C59B27] mr-2"></i> (954) 292-3366
           </a>
         </div>
       </div>
-      <div class="flex justify-center">
-<img 
-  src="/images/arelysphoto.webp" 
-  alt="Arelys Catena Headshot" 
-  class="rounded-2xl shadow-2xl object-cover w-80 h-96 md:w-96 md:h-[450px] bg-slate-200 border-2 border-[#C49A45]"
-/>
+    </section>
+
+    <!-- Quick Navigation / Features Grid -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Explore Real Estate Resources</h2>
+          <p class="text-gray-600 text-lg">Whether you are buying your first home or keeping up with local market trends, we have the tools you need.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Consumer Education Card -->
+          <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div>
+              <span class="bg-[#C59B27]/10 text-[#C59B27] font-semibold px-3 py-1 rounded-full text-xs">Buyer & Seller Guides</span>
+              <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">Consumer Education Hub</h3>
+              <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                Step-by-step guides, checklists, and expert roadmaps designed to help you navigate the South Florida real estate market with confidence.
+              </p>
+            </div>
+            <div>
+              <a href="/consumer-education" class="inline-flex items-center text-[#C59B27] font-semibold hover:underline">
+                Explore Guides <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Local Market News Card -->
+          <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div>
+              <span class="bg-[#C59B27]/10 text-[#C59B27] font-semibold px-3 py-1 rounded-full text-xs">Market Reports</span>
+              <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">Local Market News</h3>
+              <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                Stay informed with the latest updates on housing trends, municipal news, and sales data across Broward and Miami-Dade counties.
+              </p>
+            </div>
+            <div>
+              <a href="/blog" class="inline-flex items-center text-[#C59B27] font-semibold hover:underline">
+                Read Market Updates <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </BaseLayout>

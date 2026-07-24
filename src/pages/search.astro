@@ -1,17 +1,46 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Search Homes | MLS Feed">
-  <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="text-center mb-10">
-      <span class="text-[#C49A45] font-bold tracking-wider uppercase text-sm">MLS Property Feed</span>
-      <h1 class="text-3xl font-bold text-slate-900 mt-2">Live Property Search</h1>
-      <p class="text-slate-600 mt-2">Explore active local listings directly from Arelys's property portal.</p>
-    </div>
 
-    <!-- IDX Iframe Container -->
-    <div class="bg-white border border-slate-200 rounded-2xl p-2 md:p-6 shadow-sm w-full overflow-hidden">
-      <iframe src="https://matrix.beachesmls.com/Matrix/public/IDX.aspx?idx=1cdeea" width="100%" height="1200px" frameborder="0" marginwidth="0" marginheight="0" title="MLS Property Search"></iframe>
+<BaseLayout 
+  title="Search South Florida Homes for Sale | MLS Search" 
+  description="Browse active real estate listings, homes for sale, and condos across Broward and Miami-Dade counties with Arelys Catena."
+>
+  <main class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-16">
+        <span class="text-[#C59B27] font-bold tracking-wider uppercase text-sm">Find Your Property</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">
+          Search South Florida Homes
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Explore active MLS listings, filter by property type, price, and location, and find your dream home in Broward or Miami-Dade County.
+        </p>
+      </div>
+
+      <!-- Search Interface / Content Card -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 md:p-12 text-center">
+        <div class="max-w-xl mx-auto py-12">
+          <div class="w-16 h-16 bg-[#C59B27]/10 text-[#C59B27] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">MLS Search Tool Integration</h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Ready to browse live inventory or set up custom property alerts tailored to your exact criteria? Get in touch with Arelys for direct access.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="tel:9542923366" class="bg-[#C59B27] hover:bg-[#b0881f] text-white font-semibold px-6 py-3 rounded-xl shadow transition">
+              <i class="fa-solid fa-phone mr-2"></i> Call (954) 292-3366
+            </a>
+            <a href="mailto:arelyshomes@gmail.com" class="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-xl shadow transition">
+              <i class="fa-solid fa-envelope mr-2"></i> Email Arelys
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
+  </main>
 </BaseLayout>

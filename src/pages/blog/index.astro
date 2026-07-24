@@ -1,34 +1,72 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
-posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Local Market News | Real Estate Tips & Updates">
-  <main class="max-w-7xl mx-auto px-4 py-12">
-    <div class="mb-12">
-      <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Market Insights & News</span>
-      <h1 class="text-4xl font-bold text-gray-900 mt-2">Real Estate Tips & Local Updates</h1>
-      <p class="text-gray-600 mt-2">Stay informed with expert advice on buying, selling, and navigating current housing market trends.</p>
-    </div>
+<BaseLayout 
+  title="Local Market News & Real Estate Updates | Arelys" 
+  description="Stay informed on South Florida housing trends, municipal news, and market reports across Broward and Miami-Dade counties."
+>
+  <main class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-16">
+        <span class="text-[#C59B27] font-bold tracking-wider uppercase text-sm">Market Insights & News</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">
+          Real Estate Tips & Local Updates
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Stay informed with expert advice on buying, selling, and navigating current housing market trends.
+        </p>
+      </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {posts.map((post) => (
-        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full">
-              {post.data.pubDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-            </span>
-            <h2 class="text-xl font-bold text-gray-900 mt-4 mb-2">{post.data.title}</h2>
-            <p class="text-gray-600 text-sm mb-6">{post.data.description}</p>
-          </div>
-          <a href={`/blog/${post.id}`} class="text-amber-600 font-semibold hover:underline inline-flex items-center">
-            Read Full Article &rarr;
+      <!-- Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {posts.map((post) => (
+          <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="bg-[#C59B27]/10 text-[#C59B27] font-semibold px-3 py-1 rounded-full text-xs">
+                  Market Report
+                </span>
+                <span class="text-gray-400 text-xs">5 min read</span>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900 mb-3 hover:text-[#C59B27] transition-colors">
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+              </h2>
+              <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                {post.data.description}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+              <span>{post.data.date ? new Date(post.data.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : 'July 2026'}</span>
+              <a href={`/blog/${post.id}`} class="inline-flex items-center text-[#C59B27] font-semibold hover:underline">
+                Read Full Article <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="mt-16 bg-[#C59B27] text-white rounded-2xl p-8 md:p-12 text-center shadow-lg">
+        <h2 class="text-3xl font-bold mb-4">Looking to Buy or Sell in South Florida?</h2>
+        <p class="text-white/90 max-w-xl mx-auto mb-8">
+          Get expert insights and personalized representation tailored to your real estate goals. Contact Arelys today.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="tel:9542923366" class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">
+            <i class="fa-solid fa-phone text-[#C59B27] mr-2"></i> (954) 292-3366
+          </a>
+          <a href="mailto:arelyshomes@gmail.com" class="bg-gray-900 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-800 transition">
+            <i class="fa-solid fa-envelope text-[#C59B27] mr-2"></i> Email Arelys
           </a>
         </div>
-      ))}
+      </div>
+
     </div>
   </main>
 </BaseLayout>

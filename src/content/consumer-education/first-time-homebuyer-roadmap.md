@@ -1,12 +1,10 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: '../../layouts/MarkdownLayout.astro'
 title: "First-Time Homebuyer's Roadmap: What to Expect in South Florida"
 category: "Buyers Guide"
 readTime: "5 min read"
 date: "July 2026"
 ---
-
-# First-Time Homebuyer's Roadmap: What to Expect in South Florida
 
 Purchasing your first home is an exciting milestone. Here is a step-by-step breakdown of how to navigate the market with total confidence.
 

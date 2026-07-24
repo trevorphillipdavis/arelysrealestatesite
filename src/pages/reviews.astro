@@ -1,19 +1,84 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Client Reviews & Testimonials | Arelys Catena">
-  <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="max-w-3xl mb-12">
-      <span class="text-[#C49A45] font-bold tracking-wider uppercase text-sm">Social Proof</span>
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Client Testimonials</h1>
-      <p class="text-slate-600 mt-2">See what past buyers and sellers have to say about working with Arelys.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm">
-        <p class="text-[#C49A45] font-bold mb-2">★★★★★</p>
-        <p class="text-slate-700 italic">"Arelys made buying our first home completely seamless. Expert negotiation and absolute professionalism throughout!"</p>
-        <p class="text-slate-500 text-sm font-semibold mt-4">— Sarah & Mark T.</p>
+
+<BaseLayout 
+  title="Client Reviews & Testimonials | Arelys Catena" 
+  description="Read real reviews and testimonials from satisfied home buyers and sellers who partnered with Arelys Catena for their South Florida real estate needs."
+>
+  <main class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-16">
+        <span class="text-[#C59B27] font-bold tracking-wider uppercase text-sm">Client Success Stories</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">
+          Customer Testimonials
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Read what our valued clients have to say about their experience working with Arelys Catena in buying and selling South Florida homes.
+        </p>
       </div>
+
+      <!-- Reviews Grid / Content Placeholder -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Review Card 1 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-1 text-[#C59B27] mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-700 italic mb-6 leading-relaxed">
+              "Arelys made our home buying process smooth and stress-free. Her deep knowledge of the South Florida market and dedication to our needs was exceptional."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500">
+            <span class="font-semibold text-gray-900">Satisfied Homebuyer</span>
+            <span>Broward County</span>
+          </div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-1 text-[#C59B27] mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-700 italic mb-6 leading-relaxed">
+              "Working with Arelys to sell our property was a fantastic experience. Her professional marketing strategy got our home sold quickly and for top dollar!"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500">
+            <span class="font-semibold text-gray-900">Home Seller</span>
+            <span>Miami-Dade County</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="mt-16 bg-[#C59B27] text-white rounded-2xl p-8 md:p-12 text-center shadow-lg">
+        <h2 class="text-3xl font-bold mb-4">Ready to Write Your Own Success Story?</h2>
+        <p class="text-white/90 max-w-xl mx-auto mb-8">
+          Contact Arelys today to discuss your real estate goals and get expert guidance every step of the way.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="tel:9542923366" class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">
+            <i class="fa-solid fa-phone text-[#C59B27] mr-2"></i> (954) 292-3366
+          </a>
+          <a href="mailto:arelyshomes@gmail.com" class="bg-gray-900 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-800 transition">
+            <i class="fa-solid fa-envelope text-[#C59B27] mr-2"></i> Email Arelys
+          </a>
+        </div>
+      </div>
+
     </div>
-  </div>
+  </main>
 </BaseLayout>

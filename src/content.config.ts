@@ -2,13 +2,22 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  loader: glob({ pattern: '**/[-[a-z0-9]]*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
-    pubDate: z.coerce.date(),
-    description: z.string(),
-    author: z.string().optional(),
+    description: z.string().optional(),
+    date: z.date().optional(),
   }),
 });
 
-export const collections = { blog };
+const consumerEducation = defineCollection({
+  loader: glob({ pattern: '**/[-[a-z0-9]]*.{md,mdx}', base: './src/content/consumer-education' }),
+  schema: z.object({
+    title: z.string(),
+    category: z.string().optional(),
+    readTime: z.string().optional(),
+    date: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, consumerEducation };
