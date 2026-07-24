@@ -1,10 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Your list of consumer education articles
+const articles = [
+  {
+    slug: 'first-time-homebuyer-roadmap',
+    category: "Buyers Guide",
+    readTime: "5 min read",
+    title: "First-Time Homebuyer's Roadmap: What to Expect in South Florida",
+    excerpt: "Purchasing your first home is an exciting milestone. Here is a step-by-step breakdown of how to navigate the market with total confidence.",
+    date: "July 2026"
+  }
+];
 ---
 
-<BaseLayout title="Consumer Education | Arelys Catena Real Estate">
+<BaseLayout title="Consumer Education & Blog Articles | Arelys Catena Real Estate">
   <main class="py-16 md:py-24 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Page Header -->
       <div class="text-center mb-16">
@@ -13,64 +25,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Consumer Education Hub
         </h1>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Navigate your real estate journey with confidence. Explore our expert guides, tips, and resources designed to help buyers and sellers make informed decisions.
+          Explore our latest blog posts, expert guides, and educational articles designed to help buyers and sellers make informed real estate decisions.
         </p>
       </div>
 
-      <!-- Articles / Guides Grid -->
-      <div class="space-y-8">
-        
-        <!-- Guide 1 -->
-        <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-md transition-shadow">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-[#C59B27]/10 text-[#C59B27] font-semibold px-3 py-1 rounded-full text-xs">Buyers Guide</span>
-            <span class="text-gray-400 text-xs">5 min read</span>
-          </div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">
-            First-Time Homebuyer's Roadmap: What to Expect in South Florida
-          </h2>
-          <p class="text-gray-600 mb-6">
-            Purchasing your first home is an exciting milestone. Learn about pre-approval, navigating the local market, making competitive offers, and what happens during escrow.
-          </p>
-          <a href="/search" class="inline-flex items-center text-[#C59B27] font-semibold hover:underline">
-            Start Searching Listings <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-          </a>
-        </article>
-
-        <!-- Guide 2 -->
-        <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-md transition-shadow">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-[#C59B27]/10 text-[#C59B27] font-semibold px-3 py-1 rounded-full text-xs">Sellers Guide</span>
-            <span class="text-gray-400 text-xs">7 min read</span>
-          </div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">
-            Maximizing Your Property Value Before Listing
-          </h2>
-          <p class="text-gray-600 mb-6">
-            Discover simple staging techniques, high-impact minor repairs, and effective marketing strategies that can significantly increase your home's final selling price.
-          </p>
-          <a href="tel:9542923366" class="inline-flex items-center text-[#C59B27] font-semibold hover:underline">
-            Call for a Free Home Valuation <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-          </a>
-        </article>
-
-        <!-- Guide 3 -->
-        <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-md transition-shadow">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-[#C59B27]/10 text-[#C59B27] font-semibold px-3 py-1 rounded-full text-xs">Market Insights</span>
-            <span class="text-gray-400 text-xs">4 min read</span>
-          </div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">
-            Understanding Real Estate Negotiations and Closing Costs
-          </h2>
-          <p class="text-gray-600 mb-6">
-            Closing costs and negotiations can catch buyers and sellers off guard. Break down standard fees, inspection contingencies, and how expert representation saves you money.
-          </p>
-          <a href="/blog" class="inline-flex items-center text-[#C59B27] font-semibold hover:underline">
-            Read Local Market News <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-          </a>
-        </article>
-
+      <!-- Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {articles.map((article) => (
+          <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="bg-[#C59B27]/10 text-[#C59B27] font-semibold px-3 py-1 rounded-full text-xs">
+                  {article.category}
+                </span>
+                <span class="text-gray-400 text-xs">{article.readTime}</span>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900 mb-3 hover:text-[#C59B27] transition-colors">
+                <a href={`/consumer-education/${article.slug}`}>{article.title}</a>
+              </h2>
+              <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                {article.excerpt}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+              <span>{article.date}</span>
+              <a href={`/consumer-education/${article.slug}`} class="inline-flex items-center text-[#C59B27] font-semibold hover:underline">
+                Read Article <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
 
       <!-- Call to Action Banner -->
