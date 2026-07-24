@@ -3,78 +3,939 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="Client Reviews & Testimonials | Arelys Catena" 
-  description="Read real reviews and testimonials from satisfied home buyers and sellers who partnered with Arelys Catena for their South Florida real estate needs."
+  title="Customer Testimonials & Reviews | Arelys Catena Realtor" 
+  description="Read all 5-star verified client reviews and testimonials for South Florida Realtor Arelys Catena. Discover why homebuyers and sellers trust her expertise."
 >
-  <main class="py-16 md:py-24 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <main class="py-12 md:py-16 bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Page Header -->
-      <div class="text-center mb-16">
-        <span class="text-[#C59B27] font-bold tracking-wider uppercase text-sm">Client Success Stories</span>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">
-          Customer Testimonials
+      <div class="text-center mb-12">
+        <span class="text-[#C59B27] font-bold tracking-wider uppercase text-xs sm:text-sm">Client Testimonials</span>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-1 mb-2">
+          Trusted by Homebuyers & Sellers
         </h1>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Read what our valued clients have to say about their experience working with Arelys Catena in buying and selling South Florida homes.
+        <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+          Read what clients have to say about working with Arelys Catena across Broward and Miami-Dade counties.
         </p>
-      </div>
-
-      <!-- Reviews Grid / Content Placeholder -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Review Card 1 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center space-x-1 text-[#C59B27] mb-4">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              "Arelys made our home buying process smooth and stress-free. Her deep knowledge of the South Florida market and dedication to our needs was exceptional."
-            </p>
+        
+        <!-- Rating Badge Summary -->
+        <div class="inline-flex items-center gap-2 bg-white border border-gray-200 px-5 py-2.5 rounded-full shadow-sm mt-6">
+          <div class="text-[#C59B27] flex gap-1 text-sm">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
           </div>
-          <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500">
-            <span class="font-semibold text-gray-900">Satisfied Homebuyer</span>
-            <span>Broward County</span>
-          </div>
-        </div>
-
-        <!-- Review Card 2 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center space-x-1 text-[#C59B27] mb-4">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              "Working with Arelys to sell our property was a fantastic experience. Her professional marketing strategy got our home sold quickly and for top dollar!"
-            </p>
-          </div>
-          <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500">
-            <span class="font-semibold text-gray-900">Home Seller</span>
-            <span>Miami-Dade County</span>
-          </div>
+          <span class="font-bold text-gray-900 text-sm">5.0 / 5.0 Rating</span>
+          <span class="text-gray-400 text-sm">| All Verified Reviews</span>
         </div>
       </div>
 
-      <!-- Call to Action Banner -->
-      <div class="mt-16 bg-[#C59B27] text-white rounded-2xl p-8 md:p-12 text-center shadow-lg">
-        <h2 class="text-3xl font-bold mb-4">Ready to Write Your Own Success Story?</h2>
-        <p class="text-white/90 max-w-xl mx-auto mb-8">
-          Contact Arelys today to discuss your real estate goals and get expert guidance every step of the way.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="tel:9542923366" class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">
-            <i class="fa-solid fa-phone text-[#C59B27] mr-2"></i> (954) 292-3366
+      <!-- Reviews Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys was amazing! She helped find exactly what I wanted, made sure all negotiations were favorable and made sure the entire process was smooth. Highly recommend for anyone looking for a home or looking to sell their home!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Nina Pelaez</p><p class="text-xs text-gray-500">Pembroke Pines, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Kind, trustworthy, friendly and excellent communication."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Linda Talarico</p><p class="text-xs text-gray-500">Delray Beach, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena is one of the most beautiful people I ever met Not just physical, she also has a heart of gold... She is DEFINATELY TRUST WORTHY, GENUINE, DETAIL ORIENTED ALSO AN EXCELLENT COMMUNICATOR."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Delaree</p><p class="text-xs text-gray-500">Davie, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena was absolutely amazing in helping me sell my home. From the very beginning, she was very professional, knowledgeable, and always available to answer my questions."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Trevor</p><p class="text-xs text-gray-500">Boca Raton, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Excellent communication skills! Arelys Catena kept us informed every step of the way during the sale of our house. Professional, respectful and well-collected."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Melissa</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arely truly understands your real estate needs. She is professional, kind, knowledgeable, and always puts your needs first."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Lizette</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Es muy Profesional hace lo que le fascina Lo cual no es un trabajo. Da un 300% por sus clientes... ¡Por eso ella es The Best!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Odalys Zequeira</p><p class="text-xs text-gray-500">Homestead, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Very helpfull, nice comunication, very transparent and i am very gratefull to her."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Gabriel Guedes</p><p class="text-xs text-gray-500">Hialeah, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys made the selling process easy and was very professional and responsive. She understood my needs and got right to work."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Tamra</p><p class="text-xs text-gray-500">Coconut Creek, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"When Jess and I first met Arelys, we knew we were in good hands... Arelys is a tremendous realtor and would 100% use her help again in the future."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Nick Tomei</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"En la Sra. Arelys Catena debemos resaltar dos cualidades: Su amplísima e indiscutible experiencia como realtor... She is our Guardian Angel. We love her."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Edgar Morao y Marta Casano</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Very professional. Kind and very educated."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Amparo Snow</p><p class="text-xs text-gray-500">Tamarac, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Working with my Arelys made our first home purchase a seamless experience. Their expertise, patience, and guidance were invaluable in finding the perfect home."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Diana Garcia</p><p class="text-xs text-gray-500">Pembroke Pines, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Excelencia en atención, experiencia y profesionalismo por lo que la recomiendo y volvería a trabajar con ella cuando lo necesite."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Soribel Rocha</p><p class="text-xs text-gray-500">Coral Gables, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"As always awesome job this is my fourth time using Arelys***** Knowledgeable, she listens, prompt and always deliver"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Marcia</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"She and her team were wonderful to work with All the team was excellent and timely Everyone on this team was so wonderful timely understanding of our situation"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Pj Wetzel</p><p class="text-xs text-gray-500">Miami, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys and her team were very detailed oriented and organized. I knew all the key dates, and they sent friendly reminders. There was excellent communication throughout!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Diana</p><p class="text-xs text-gray-500">Hollywood, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena nos transmitió la seguridad y confianza necesarias de que realizaríamos la venta al precio estimado... la recomendamos con los ojos cerrados."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Carmela D Amato</p><p class="text-xs text-gray-500">Weston, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Soy propietario de mi inmueble por casi 20 años... nunca había tenido la suerte de haber trabajado con una persona tan especial y tan profesional como Arelys Catena."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Fort Lauderdale Seller</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys is very knowledgeable about the rental market and was very happy to let me browse as many places as I wanted until I found something that suited my needs."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Tamarac Seller</p><p class="text-xs text-gray-500">Tamarac, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arekys is very professional. I will defenely will recommend Her."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">John Graterol</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Excelente persona y profesional en su área de desempeño. La recomiendo ampliamente por calidad del servicio prestado."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Fort Lauderdale Seller</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"This is my first time working with Arelys Catena for a rental property and I would not even consider for a second doing it with anyone else. Honest, respectful, caring."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Sunrise Seller</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Súper Comprometida, seria, responsable. Trabaja con amor."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Tamarac Seller</p><p class="text-xs text-gray-500">Tamarac, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arely at it again, impecable job and this is the reason we always go back to her and this specific century 21! Amazing realtor, Arelys Catena!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Fort Lauderdale Seller</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena represents the 'true' and quintessential definition of 'Realtor'. She is very professional, prompt, and detail oriented. A+ is our rating!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">David and Ileana Reinikainen</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena your passion is your purpose and it shows. I know your future clients will receive the same care my family received."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Sunrise Buyer</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys was extremely great to work with. She was very caring and understood exactly what I wanted in a house. It was a pleasure."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Tamarac Buyer</p><p class="text-xs text-gray-500">Tamarac, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys, gracias por ser tan sincera... Cleusa y yo, estamos muy satisfecho de su atencion y los conocimeientos que mostraron."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Cleusa & Buyer</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena and Joanne Perez, The dream Team, great job"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Hallandale Buyer</p><p class="text-xs text-gray-500">Hallandale Beach, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"We are so grateful to have had the opportunity to work with Arelys and her team... It was like being guided through the process by a friend who cares about you."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Davie Buyer</p><p class="text-xs text-gray-500">Davie, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"En mi opinión Arelys Catena es una realtor con experiencia, que ha desempeñado su trabajo con excelencia y profesionalismo."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Davie Seller</p><p class="text-xs text-gray-500">Davie, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena is an excellent realtor. Very knowledgeable and was always available to answer any questions I had. The best realtor I've ever dealt with."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Hialeah Seller</p><p class="text-xs text-gray-500">Hialeah, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"As I said previously. Arelys Catena is an excellent agent. She does your company proud."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Mary Ann Davis</p><p class="text-xs text-gray-500">Palm Beach Gardens, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arely's is a first class real estate broker that not only provides the knowledge but also the support that is needed for a major financial process."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Pembroke Pines Buyer</p><p class="text-xs text-gray-500">Pembroke Pines, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"When it came time to sell my Mom's home, Arelys was our choice... She was kind, compassionate, empathetic and even shed a few tears with us. She gets the job done!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Hollywood Seller</p><p class="text-xs text-gray-500">Hollywood, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena was incredibly attentive to our needs. She found what we were looking for very quickly and helped us through every step."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Fort Lauderdale Buyer</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"I'm beyond happy with the services provided by Arelys. She walked me through the whole process. Given the fact that I'm out of state, she made it easy."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Davie Buyer</p><p class="text-xs text-gray-500">Davie, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena is the best realtor I've ever dealt with. Everything she does in preparation to list someone's house for sale is top notch - she doesn't cut corners."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Pembroke Pines Seller</p><p class="text-xs text-gray-500">Pembroke Pines, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys was awesome from beginning to end through all the delays with the association as well her assistant Joanne. Meet a broker ended making friend."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Margate Buyer</p><p class="text-xs text-gray-500">Margate, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Es una persona con amplio conocimiento en el área de bienes raíces del sur de la Florida. Nos inspiró mucha confianza."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Tamarac Buyer</p><p class="text-xs text-gray-500">Tamarac, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"We are extremely happy with our experience with Arelys Catena. Her expertise, professionalism and determination helped us find and buy our dream home."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Davie Buyer</p><p class="text-xs text-gray-500">Davie, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Por su calidad humana y por su dedicación estoy muy agradecida."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Margate Seller</p><p class="text-xs text-gray-500">Margate, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"I can't begin to tell you how I feel about Arelys... She is the type of realtor who takes pride in what she does and sincerely only wants the best for you. Te quiero mucho! Xoxo"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Davie Buyer</p><p class="text-xs text-gray-500">Davie, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"We would highly recommend arelys and her team to sell your home."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Fort Lauderdale Seller</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Amazing service, top class. Could not be any better.. or happier! The best realtor I have ever met in my life."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Davie Buyer</p><p class="text-xs text-gray-500">Davie, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys is passionate about what she does and it shows. With her warm personality, her knowledge of her industry and the markets, she will guide and help you."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Coconut Creek Seller</p><p class="text-xs text-gray-500">Coconut Creek, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys listens to what you are saying. She's very knowledgeable. She sends weekly updates... first rate performance!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Fort Pierce Seller</p><p class="text-xs text-gray-500">Fort Pierce, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"If you're looking for A+ service, do not look further! Arelys is the real estate guru you need in your corner... We don't call her 'The Miraculous Arelys' for nothing!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Hollywood Buyer</p><p class="text-xs text-gray-500">Hollywood, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys was the most amazing person to have in our corner when my husband and I bought our first home. She always kept us informed."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Fort Lauderdale Buyer</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RateMyAgent</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"She is as the best real estate agent I have ever used - wouldn't change her for the world. Thank you Nancy Connell"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Nancy Connell</p><p class="text-xs text-gray-500">Margate, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys was amazing! I was a first time home buyer and didn't know what to expect. Arelys was there to guide me every step of the way."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Daniel Ramirez</p><p class="text-xs text-gray-500">Lake Placid, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"I love working with Arelys! This is my 5th transaction with her and she has always delivered what she promised. Professional, knowledgeable and makes sure I get the BEST return!"</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">PH Property Management</p><p class="text-xs text-gray-500">Tamarac, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arely's is a first class real estate broker that not only provides the knowledge but also the support that is needed for a major financial process."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Maria Perez</p><p class="text-xs text-gray-500">Pembroke Pines, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys helped my best friend and his wife buy their home a few years ago... On a random weekday night at around 10pm I called and Arelys answered. She walked me through the process."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Kevin</p><p class="text-xs text-gray-500">Tamarac, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys es una gran profesional, realmente te asesora en todo el proceso de venta de la propiedad, te aporta soluciones a los posibles problemas."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Andres Utrera</p><p class="text-xs text-gray-500">Doral, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Seller Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Siempre me ha resultado muy fácil trabajar con Arelys Catena... Es una persona que cuenta con toda mi confianza por su profesionalismo, simpatía y entrega."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Samarth Rocha</p><p class="text-xs text-gray-500">Doral, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Verified Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelis Catena is an excellent realtor. Her personality is amazing and you feel confident about her from the day you meet her."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Lucy Catena</p><p class="text-xs text-gray-500">Fort Lauderdale, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C59B27] flex gap-1 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium">Buyer Review</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">"Arelys Catena professionalism and reliability was outstanding, and made a great difference in this transaction... Her willingness to help and go the extra mile."</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div><p class="font-bold text-gray-900 text-sm">Robert Noda</p><p class="text-xs text-gray-500">Sunrise, FL</p></div>
+            <span class="text-xs text-gray-400 font-medium">RealSatisfied</span>
+          </div>
+        </div>
+
+      </div>
+
+<!-- External Links Footer -->
+      <div class="mt-12 text-center bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Looking for More Reviews?</h3>
+        <p class="text-gray-600 text-sm mb-6">You can read all of my verified client feedback directly on my official network profiles.</p>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="https://www.century21.com/agent/detail/fl/pembroke-pines/agents/arelys-catena/aid-P00200000FG1PkCfDtN5ojoS2ZyVbjq8V9KGi12h" target="_blank" rel="noopener noreferrer" class="bg-[#C59B27] hover:bg-[#b0881f] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm">
+            View Century 21 Profile
           </a>
-          <a href="mailto:arelyshomes@gmail.com" class="bg-gray-900 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-800 transition">
-            <i class="fa-solid fa-envelope text-[#C59B27] mr-2"></i> Email Arelys
+          <a href="https://www.zillow.com/profile/Arelyshomes" target="_blank" rel="noopener noreferrer" class="bg-[#0074E4] hover:bg-[#005bb5] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm">
+            View Zillow Profile
+          </a>
+          <a href="https://www.realtor.com/realestateagents/arelys-catena_pembroke-pines_fl_3429302_1" target="_blank" rel="noopener noreferrer" class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm">
+            View Realtor.com Profile
           </a>
         </div>
       </div>
