@@ -19,13 +19,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
           Specializing in residential properties, market insights, and personalized guidance across Broward and Miami-Dade counties.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/search" class="bg-[#C59B27] hover:bg-[#b0881f] text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition-all duration-200">
-            Search Homes Now
-          </a>
-          <a href="tel:9542923366" class="bg-white/15 hover:bg-white/25 text-white border border-white/20 font-semibold px-8 py-3.5 rounded-xl backdrop-blur-sm transition-all duration-200">
-            <i class="fa-solid fa-phone text-[#C59B27] mr-2"></i> (954) 292-3366
-          </a>
+        
+        <!-- Action Buttons Layout -->
+        <div class="flex flex-col items-center gap-4 max-w-2xl mx-auto">
+          <!-- Visible Primary Buttons -->
+          <div class="flex flex-col sm:flex-row justify-center gap-4 w-full">
+            <a href="/search" class="bg-[#C59B27] hover:bg-[#b0881f] text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition-all duration-200 text-center">
+              Search Homes Now
+            </a>
+            <a href="tel:9542923366" class="bg-[#C59B27] hover:bg-[#b0881f] text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition-all duration-200 text-center">
+              What is Your Home Worth
+            </a>
+          </div>
+
+          <!-- Hidden Contact Buttons (Remove 'hidden' class later to bring them back) -->
+          <div class="hidden flex-col sm:flex-row justify-center gap-4 w-full">
+            <a href="tel:9542923366" class="bg-white/15 hover:bg-white/25 text-white border border-white/20 font-semibold px-8 py-3.5 rounded-xl backdrop-blur-sm transition-all duration-200 text-center">
+              <i class="fa-solid fa-phone text-[#C59B27] mr-2"></i> (954) 292-3366
+            </a>
+            <a href="mailto:arelyshomes@gmail.com" class="bg-white/15 hover:bg-white/25 text-white border border-white/20 font-semibold px-8 py-3.5 rounded-xl backdrop-blur-sm transition-all duration-200 text-center">
+              <i class="fa-solid fa-envelope text-[#C59B27] mr-2"></i> Email Arelys
+            </a>
+          </div>
         </div>
       </div>
     </section>

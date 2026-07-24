@@ -1,0 +1,139 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = "Buy or Sell Your Next Home With Arelys Catena" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <!-- FontAwesome for social media and icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col">
+    
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+          
+          <!-- Left: Logo & Branding -->
+          <a href="/" class="flex items-center gap-3.5 hover:opacity-90 transition-opacity flex-shrink-0">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#C59B27] shadow-sm flex-shrink-0">
+              <img src="/images/arelysphoto.webp" alt="Arelys Catena" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="bg-[#C59B27] text-white font-bold px-2 py-1 rounded text-xs">C21</span>
+              <div>
+                <span class="font-bold text-gray-900 text-base tracking-tight leading-none block">Arelys Catena</span>
+                <span class="text-xs text-[#C59B27] font-medium leading-none mt-1 block">Real Estate</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation & Contact Info -->
+          <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+            
+            <!-- Persistent Contact Info Stacked -->
+            <div class="hidden xl:flex flex-col justify-center space-y-1.5 border-l border-gray-200 pl-6 text-xs text-gray-600">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-[#C59B27] text-sm w-4"></i>
+                <a href="tel:9542923366" class="hover:text-[#C59B27] font-semibold whitespace-nowrap">(954) 292-3366</a>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-[#C59B27] text-sm w-4"></i>
+                <a href="mailto:arelyshomes@gmail.com" class="hover:text-[#C59B27] font-semibold whitespace-nowrap">arelyshomes@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Social Media Logos -->
+            <div class="flex items-center space-x-3 text-gray-600 border-l border-gray-200 pl-6">
+              <a href="https://www.facebook.com/arelys.catena" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#C59B27] hover:text-white transition-colors">
+                <i class="fa-brands fa-facebook-f text-sm"></i>
+              </a>
+              <a href="https://www.instagram.com/arelyscatena" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#C59B27] hover:text-white transition-colors">
+                <i class="fa-brands fa-instagram text-sm"></i>
+              </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+              <a href="/" class="text-[#C59B27] hover:opacity-80 transition-opacity">Home</a>
+              <a href="/search" class="text-[#C59B27] hover:opacity-80 transition-opacity">Search Homes</a>
+              <a href="/consumer-education" class="text-[#C59B27] hover:opacity-80 transition-opacity">Consumer Education</a>
+              <a href="/blog" class="text-[#C59B27] hover:opacity-80 transition-opacity">Local Market News</a>
+              <a href="/reviews" class="text-[#C59B27] hover:opacity-80 transition-opacity">Customer Testimonials</a>
+            </nav>
+
+          </div>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-gray-700 text-2xl focus:outline-none p-2">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 pt-4 pb-6 space-y-4">
+        <nav class="flex flex-col space-y-3 font-medium text-sm">
+          <a href="/" class="text-[#C59B27] hover:opacity-80">Home</a>
+          <a href="/search" class="text-[#C59B27] hover:opacity-80">Search Homes</a>
+          <a href="/consumer-education" class="text-[#C59B27] hover:opacity-80">Consumer Education</a>
+          <a href="/blog" class="text-[#C59B27] hover:opacity-80">Local Market News</a>
+          <a href="/reviews" class="text-[#C59B27] hover:opacity-80">Customer Testimonials</a>
+        </nav>
+
+        <div class="pt-4 border-t border-gray-100 flex flex-col space-y-2 text-xs text-gray-600">
+          <a href="tel:9542923366" class="flex items-center gap-2 text-gray-900 font-semibold">
+            <i class="fa-solid fa-phone text-[#C59B27]"></i> (954) 292-3366
+          </a>
+          <a href="mailto:arelyshomes@gmail.com" class="flex items-center gap-2 text-gray-900 font-semibold">
+            <i class="fa-solid fa-envelope text-[#C59B27]"></i> arelyshomes@gmail.com
+          </a>
+        </div>
+
+        <div class="pt-3 border-t border-gray-100 flex items-center space-x-3">
+          <a href="https://www.facebook.com/arelys.catena" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#C59B27] hover:text-white transition-colors">
+            <i class="fa-brands fa-facebook-f text-sm"></i>
+          </a>
+          <a href="https://www.instagram.com/arelyscatena" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#C59B27] hover:text-white transition-colors">
+            <i class="fa-brands fa-instagram text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT SLOT -->
+    <div class="flex-grow">
+      <slot />
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 py-6 mt-20 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-gray-500 text-center">
+        &copy; {new Date().getFullYear()} Century21 Arelys Catena | Real Estate. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Interactive script to toggle the mobile menu -->
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    </script>
+
+  </body>
+</html>
