@@ -1,5 +1,4 @@
 ---
-layout: '../../layouts/MarkdownLayout.astro'
 title: "First-Time Homebuyer's Roadmap: What to Expect in South Florida"
 category: "Buyers Guide"
 readTime: "5 min read"

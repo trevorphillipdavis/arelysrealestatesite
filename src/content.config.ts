@@ -2,22 +2,21 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/[-[a-z0-9]]*.{md,mdx}', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    date: z.date().optional(),
+    pubDate: z.coerce.date().optional(),
   }),
 });
 
 const consumerEducation = defineCollection({
-  loader: glob({ pattern: '**/[-[a-z0-9]]*.{md,mdx}', base: './src/content/consumer-education' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/consumer-education" }),
   schema: z.object({
     title: z.string(),
-    category: z.string().optional(),
-    readTime: z.string().optional(),
-    date: z.string().optional(),
+    description: z.string().optional(),
+    pubDate: z.coerce.date().optional(),
   }),
 });
 
-export const collections = { blog, consumerEducation };
+export const collections = { blog, 'consumer-education': consumerEducation };
