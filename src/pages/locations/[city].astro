@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const allEntries = await getCollection('locations');
+  
+  const cities = [
+    { name: "Pembroke Pines", slug: "pembroke-pines" },
+    { name: "Miramar", slug: "miramar" },
+    { name: "Davie", slug: "davie" },
+    { name: "Weston", slug: "weston" }
+  ];
+
+  return cities.map(city => {
+    const articles = allEntries.filter(entry => {
+      const matchesFrontmatter = entry.data.city && entry.data.city.toLowerCase() === city.name.toLowerCase();
+      const matchesFolder = entry.id.startsWith(`${city.slug}/`);
+      return matchesFrontmatter || matchesFolder;
+    });
+
+    return {
+      params: { city: city.slug },
+      props: { 
+        cityName: city.name, 
+        articles 
+      },
+    };
+  });
+}
+
+const { cityName, articles } = Astro.props;
+---
+
+<BaseLayout title={`${cityName} Real Estate & Market Insights`}>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{cityName} Real Estate & Market Insights</h1>
+    <p class="text-gray-600 mb-8">Browse our latest articles, guides, and market updates for {cityName}.</p>
+
+    {articles.length > 0 ? (
+      <div class="space-y-6">
+        {articles.map(article => {
+          // Use article.id (e.g., "pembroke-pines/2026-07-26") to generate the correct route
+          const articlePath = article.id.replace(/\.(md|mdx)$/, '');
+          
+          return (
+            <article class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h2 class="text-xl font-semibold mb-2">
+                <a href={`/locations/${articlePath}`} class="text-gray-900 hover:text-[#C59B27] transition-colors">
+                  {article.data.title}
+                </a>
+              </h2>
+              {article.data.description && (
+                <p class="text-gray-600 text-sm mb-4">{article.data.description}</p>
+              )}
+              <a href={`/locations/${articlePath}`} class="text-[#C59B27] font-medium text-sm hover:underline">
+                Read Article &rarr;
+              </a>
+            </article>
+          );
+        })}
+      </div>
+    ) : (
+      <div class="p-8 bg-white border border-gray-200 rounded-lg text-center">
+        <p class="text-gray-600">New market updates and articles for {cityName} are coming soon. Check back shortly!</p>
+      </div>
+    )}
+  </main>
+</BaseLayout>

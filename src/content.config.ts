@@ -19,4 +19,18 @@ const consumerEducation = defineCollection({
   }),
 });
 
-export const collections = { blog, 'consumer-education': consumerEducation };
+const locations = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/locations" }),
+  schema: z.object({
+    title: z.string(),
+    city: z.string(),
+    description: z.string().optional(),
+    pubDate: z.coerce.date().optional(),
+  }),
+});
+
+export const collections = { 
+  blog, 
+  'consumer-education': consumerEducation,
+  locations,
+};
