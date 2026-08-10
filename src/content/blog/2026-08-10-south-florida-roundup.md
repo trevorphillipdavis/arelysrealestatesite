@@ -1,7 +1,7 @@
 ---
 title: "South Florida Residential Real Estate: What Home Buyers, Sellers, and Investors Should Know"
 pubDate: 2026-08-10
-description: "Ten residential market signals affecting home buyers, sellers, and small-scale home investors in Miami-Dade and Broward from July 28 through August 10, 2026."
+description: "Residential market signals affecting home buyers, sellers, and small-scale home investors in Miami-Dade and Broward."
 author: "Arelys Catena"
 ---
 
