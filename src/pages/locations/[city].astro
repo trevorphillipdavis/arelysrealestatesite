@@ -1,68 +1,106 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const allEntries = await getCollection('locations');
-  
-  const cities = [
-    { name: "Pembroke Pines", slug: "pembroke-pines" },
-    { name: "Miramar", slug: "miramar" },
-    { name: "Davie", slug: "davie" },
-    { name: "Weston", slug: "weston" }
+  return [
+    { params: { city: 'pembroke-pines' }, props: { cityName: 'Pembroke Pines' } },
+    { params: { city: 'miramar' }, props: { cityName: 'Miramar' } },
+    { params: { city: 'davie' }, props: { cityName: 'Davie' } },
+    { params: { city: 'weston' }, props: { cityName: 'Weston' } },
   ];
-
-  return cities.map(city => {
-    const articles = allEntries.filter(entry => {
-      const matchesFrontmatter = entry.data.city && entry.data.city.toLowerCase() === city.name.toLowerCase();
-      const matchesFolder = entry.id.startsWith(`${city.slug}/`);
-      return matchesFrontmatter || matchesFolder;
-    });
-
-    return {
-      params: { city: city.slug },
-      props: { 
-        cityName: city.name, 
-        articles 
-      },
-    };
-  });
 }
 
-const { cityName, articles } = Astro.props;
+const { city } = Astro.params;
+const { cityName } = Astro.props;
+
+// Fetch all entries from the locations collection
+const allLocations = await getCollection('locations');
+
+// Filter entries matching the city and sort by date (newest first)
+const posts = allLocations
+  .filter(entry => {
+    const entryCity = entry.data.city || '';
+    const matchesName = entryCity.toLowerCase() === cityName.toLowerCase();
+    const matchesFolder = entry.id.startsWith(`${city}/`);
+    return matchesName || matchesFolder;
+  })
+  .sort((a, b) => {
+    const dateA = a.data.pubDate ? new Date(a.data.pubDate).getTime() : 0;
+    const dateB = b.data.pubDate ? new Date(b.data.pubDate).getTime() : 0;
+    return dateB - dateA;
+  });
 ---
 
-<BaseLayout title={`${cityName} Real Estate & Market Insights`}>
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-gray-900 mb-2">{cityName} Real Estate & Market Insights</h1>
-    <p class="text-gray-600 mb-8">Browse our latest articles, guides, and market updates for {cityName}.</p>
+<BaseLayout title={`${cityName} Real Estate & Local Market News | Arelys Catena`}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-10 text-center max-w-3xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-3">
+        {cityName} Real Estate & Market Insights
+      </h1>
+      <p class="text-gray-600 text-base sm:text-lg">
+        Browse our latest articles, guides, and market updates for {cityName}.
+      </p>
+    </header>
 
-    {articles.length > 0 ? (
-      <div class="space-y-6">
-        {articles.map(article => {
-          // Use article.id (e.g., "pembroke-pines/2026-07-26") to generate the correct route
-          const articlePath = article.id.replace(/\.(md|mdx)$/, '');
-          
+    {posts.length === 0 ? (
+      <div class="text-center py-12 bg-white rounded-2xl shadow-sm border border-gray-200">
+        <p class="text-gray-500 text-base">No updates available yet for {cityName}. Check back soon!</p>
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {posts.map((post) => {
+          // Extract and format publication date cleanly
+          const rawDate = post.data.pubDate;
+          const formattedDate = rawDate
+            ? new Date(rawDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timeZone: 'UTC',
+              })
+            : null;
+
+          // Strip file extensions to generate route slug
+          const cleanSlug = post.id.replace(/\.[^/.]+$/, "");
+
           return (
-            <article class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h2 class="text-xl font-semibold mb-2">
-                <a href={`/locations/${articlePath}`} class="text-gray-900 hover:text-[#C59B27] transition-colors">
-                  {article.data.title}
+            <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                {/* Date Display Badge */}
+                {formattedDate && (
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="inline-flex items-center text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-50 text-[#C59B27] border border-amber-200">
+                      <i class="fa-regular fa-calendar text-[10px] mr-1.5"></i>
+                      Published {formattedDate}
+                    </span>
+                  </div>
+                )}
+
+                <h2 class="text-xl font-bold text-gray-900 mb-2 hover:text-[#C59B27] transition-colors leading-snug">
+                  <a href={`/locations/${cleanSlug}`}>
+                    {post.data.title}
+                  </a>
+                </h2>
+
+                {post.data.description && (
+                  <p class="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
+                    {post.data.description}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <a
+                  href={`/locations/${cleanSlug}`}
+                  class="inline-flex items-center text-xs font-bold text-[#C59B27] hover:underline"
+                >
+                  Read Article <span class="ml-1">→</span>
                 </a>
-              </h2>
-              {article.data.description && (
-                <p class="text-gray-600 text-sm mb-4">{article.data.description}</p>
-              )}
-              <a href={`/locations/${articlePath}`} class="text-[#C59B27] font-medium text-sm hover:underline">
-                Read Article &rarr;
-              </a>
+              </div>
             </article>
           );
         })}
-      </div>
-    ) : (
-      <div class="p-8 bg-white border border-gray-200 rounded-lg text-center">
-        <p class="text-gray-600">New market updates and articles for {cityName} are coming soon. Check back shortly!</p>
       </div>
     )}
   </main>
