@@ -6,6 +6,8 @@ export default defineConfig({
   site: 'https://arelystheamazingrealtor.com',
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => page !== 'https://arelystheamazingrealtor.com/open-house/',
+    }),
   ],
 });
