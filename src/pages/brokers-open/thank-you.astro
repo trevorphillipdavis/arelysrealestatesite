@@ -29,20 +29,20 @@
 
 <style>
   :global(*) { box-sizing: border-box; }
-  :global(body) { margin: 0; min-height: 100vh; font-family: Arial, Helvetica, sans-serif; color: #fff8e8; background: radial-gradient(circle at 80% 10%, rgba(224,179,72,.23), transparent 27%), linear-gradient(145deg, #520716, #7b0b20 55%, #3c0712); }
+  :global(body) { margin: 0; min-height: 100vh; font-family: Arial, Helvetica, sans-serif; color: #f9fafb; background: radial-gradient(circle at 80% 10%, rgba(197,155,39,.18), transparent 27%), linear-gradient(145deg, #111827, #26313f 55%, #171717); }
   main { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
-  .card { width: min(100%, 42rem); padding: clamp(2rem, 6vw, 4.5rem); border: 1px solid rgba(224,179,72,.55); border-radius: 1.25rem; text-align: center; background: rgba(58,5,16,.68); box-shadow: 0 24px 70px rgba(31,0,7,.3); }
+  .card { width: min(100%, 42rem); padding: clamp(2rem, 6vw, 4.5rem); border: 1px solid rgba(197,155,39,.48); border-radius: 1.25rem; text-align: center; background: rgba(17,24,39,.76); box-shadow: 0 24px 70px rgba(0,0,0,.3); }
   .eyebrow { margin: 0 0 1rem; color: #efc964; font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
   h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 400; line-height: .95; }
   .lead { margin: 1.25rem auto 2rem; color: #eadfc8; font-size: 1.1rem; line-height: 1.6; }
   .event-images { display: grid; grid-template-columns: 1.6fr 1fr; gap: .75rem; margin: 0 0 1.5rem; }
-  .event-images > div { min-height: 10rem; border: 1px solid rgba(224,179,72,.55); border-radius: .8rem; background-image: url('/images/brokers-open-flyer.png'); background-repeat: no-repeat; background-size: 100% auto; box-shadow: 0 12px 30px rgba(31,0,7,.24); }
-  .home-image { background-position: center 52%; }
-  .pool-image { background-position: 100% 88%; background-size: 220% auto !important; }
+  .event-images > div { min-height: 10rem; border: 1px solid rgba(197,155,39,.48); border-radius: .8rem; background-image: url('/images/brokers-open-flyer.png'); background-repeat: no-repeat; background-size: 100% auto; box-shadow: 0 12px 30px rgba(0,0,0,.24); }
+  .home-image { background-position: center 52%; background-size: 115% auto !important; }
+  .pool-image { background-position: 100% 88%; background-size: 300% auto !important; }
   .details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.25rem 0; border-top: 1px solid rgba(224,179,72,.35); border-bottom: 1px solid rgba(224,179,72,.35); }
   .details p { margin: 0; line-height: 1.55; }
   .note { margin: 1.5rem 0; color: #eadfc8; }
-  a { display: inline-flex; gap: .6rem; padding: .9rem 1.25rem; border-radius: .7rem; color: #3c0712; background: #efc964; font-weight: 800; text-decoration: none; }
+  a { display: inline-flex; gap: .6rem; padding: .9rem 1.25rem; border-radius: .7rem; color: #111827; background: #efc964; font-weight: 800; text-decoration: none; }
   a:hover { background: #f7d778; }
   @media (max-width: 520px) { .details, .event-images { grid-template-columns: 1fr; } .event-images > div { min-height: 10rem; } }
 </style>
