@@ -7,7 +7,11 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      filter: (page) => page !== 'https://arelystheamazingrealtor.com/open-house/',
+      filter: (page) => ![
+        'https://arelystheamazingrealtor.com/open-house/',
+        'https://arelystheamazingrealtor.com/brokers-open/',
+        'https://arelystheamazingrealtor.com/brokers-open/thank-you/',
+      ].includes(page),
     }),
   ],
 });
