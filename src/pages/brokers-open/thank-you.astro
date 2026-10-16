@@ -12,6 +12,10 @@
         <p class="eyebrow">Registration received</p>
         <h1>You’re on the list.</h1>
         <p class="lead">We look forward to seeing you at the Broker’s Open.</p>
+        <div class="event-images" aria-label="Broker's Open property and refreshments">
+          <div class="home-image" role="img" aria-label="Front exterior of 6420 NW 29th Street"></div>
+          <div class="wine-image" role="img" aria-label="Wine, cheese, and grapes"></div>
+        </div>
         <div class="details">
           <p><strong>6420 NW 29th Street</strong><br />Sunrise, FL 33313</p>
           <p><strong>Thursday, October 22, 2026</strong><br />4–6 PM</p>
@@ -31,11 +35,15 @@
   .eyebrow { margin: 0 0 1rem; color: #efc964; font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
   h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 400; line-height: .95; }
   .lead { margin: 1.25rem auto 2rem; color: #eadfc8; font-size: 1.1rem; line-height: 1.6; }
+  .event-images { display: grid; grid-template-columns: 1.6fr 1fr; gap: .75rem; margin: 0 0 1.5rem; }
+  .event-images > div { min-height: 10rem; border: 1px solid rgba(224,179,72,.55); border-radius: .8rem; background-image: url('/images/brokers-open-flyer.png'); background-repeat: no-repeat; background-size: 100% auto; box-shadow: 0 12px 30px rgba(31,0,7,.24); }
+  .home-image { background-position: center 52%; }
+  .wine-image { background-position: 92% 32%; background-size: 180% auto !important; }
   .details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.25rem 0; border-top: 1px solid rgba(224,179,72,.35); border-bottom: 1px solid rgba(224,179,72,.35); }
   .details p { margin: 0; line-height: 1.55; }
   .note { margin: 1.5rem 0; color: #eadfc8; }
   a { display: inline-flex; gap: .6rem; padding: .9rem 1.25rem; border-radius: .7rem; color: #3c0712; background: #efc964; font-weight: 800; text-decoration: none; }
   a:hover { background: #f7d778; }
-  @media (max-width: 520px) { .details { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .details, .event-images { grid-template-columns: 1fr; } .event-images > div { min-height: 10rem; } }
 </style>
 
