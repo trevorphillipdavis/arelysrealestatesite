@@ -1,0 +1,262 @@
+---
+const photos = Array.from({ length: 48 }, (_, index) => {
+  const number = String(index + 1).padStart(2, '0');
+  return `/properties/6420-nw-29th-st/photo-${number}.jpg`;
+});
+
+const galleryPhotos = [
+  photos[44], photos[36], photos[4], photos[8], photos[10], photos[12],
+  photos[20], photos[24], photos[27], photos[31], photos[33], photos[34],
+  photos[35], photos[37], photos[38], photos[39], photos[0], photos[1],
+  photos[2], photos[3], photos[5], photos[6], photos[7], photos[9],
+  photos[11], photos[13], photos[14], photos[15], photos[16], photos[17],
+  photos[18], photos[19], photos[21], photos[22], photos[23], photos[25],
+  photos[26], photos[28], photos[29], photos[30], photos[32], photos[40],
+  photos[41], photos[42], photos[43], photos[45], photos[46], photos[47],
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore 6420 NW 29th Street in Sunrise, Florida—a two-bedroom, two-bath pool home with a new roof, updated flooring, a garage, and no HOA." />
+    <meta property="og:title" content="6420 NW 29th Street, Sunrise | Arelys Catena" />
+    <meta property="og:description" content="A two-bedroom, two-bath pool home with a spacious backyard, garage, and no HOA." />
+    <meta property="og:image" content="https://arelystheamazingrealtor.com/properties/6420-nw-29th-st/photo-45.jpg" />
+    <title>6420 NW 29th Street, Sunrise | Arelys Catena</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Arelys Catena home">
+        <img src="/images/arelysphoto.webp" alt="Arelys Catena" />
+        <span><strong>Arelys Catena</strong><small>South Florida Realtor®</small></span>
+      </a>
+      <a class="header-contact" href="tel:9542923366">Call (954) 292-3366</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="property-title">
+        <img class="hero-image" src={photos[44]} alt="Front exterior of 6420 NW 29th Street" fetchpriority="high" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">For sale · MLS #B26090327</p>
+          <h1 id="property-title">6420 NW 29th Street</h1>
+          <p class="location">Sunrise, Florida 33313</p>
+          <div class="hero-meta">
+            <strong>$449,000</strong>
+            <span>2 beds</span>
+            <span>2 baths</span>
+            <span>1,282 sq. ft.</span>
+          </div>
+          <a class="primary-link" href="#contact">Schedule a private showing <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="open-house" aria-label="Open house information">
+        <div>
+          <p class="eyebrow">Upcoming open house</p>
+          <h2>Saturday, October 24</h2>
+          <p>11:00 AM–1:00 PM</p>
+        </div>
+        <a href="/open-house/">Register for the open house <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section class="overview content-width">
+        <div class="overview-copy">
+          <p class="eyebrow">Welcome home</p>
+          <h2>Easy South Florida living, inside and out.</h2>
+          <p>Welcome to this inviting two-bedroom, two-bath single-family pool home in Sunrise. A spacious layout, attached garage, and generous backyard offer plenty of room to entertain, relax by the pool, or create your own private retreat.</p>
+          <p>Recent improvements include a new roof, water heater, beautifully updated primary bathroom, and new flooring throughout. The home is approximately 10 minutes from Plantation Village Shopping Center and 15 minutes from Sawgrass Mills—and best of all, there is no HOA.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Property type</dt><dd>Single-family residence</dd></div>
+          <div><dt>Year built</dt><dd>1968</dd></div>
+          <div><dt>Lot size</dt><dd>0.14 acre</dd></div>
+          <div><dt>Garage</dt><dd>1-car attached</dd></div>
+          <div><dt>Pool</dt><dd>Private backyard pool</dd></div>
+          <div><dt>HOA</dt><dd>None</dd></div>
+        </dl>
+      </section>
+
+      <section class="feature-image" aria-label="Pool and backyard">
+        <img src={photos[36]} alt="Backyard pool at 6420 NW 29th Street" loading="lazy" />
+        <div><p class="eyebrow">Your private retreat</p><h2>Room to unwind under the South Florida sky.</h2></div>
+      </section>
+
+      <section class="video-section content-width" aria-labelledby="video-title">
+        <div class="section-heading">
+          <p class="eyebrow">Property film</p>
+          <h2 id="video-title">Take a video tour</h2>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://edri-photography.aryeo.com/videos/01a156d6-598d-7266-98b6-d2436626537e"
+            title="Video tour of 6420 NW 29th Street"
+            loading="lazy"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="gallery-section content-width" aria-labelledby="gallery-title">
+        <div class="section-heading gallery-heading">
+          <div><p class="eyebrow">Photo gallery</p><h2 id="gallery-title">Explore every space</h2></div>
+          <p>48 professional photographs and floor plans</p>
+        </div>
+        <div class="gallery" id="property-gallery">
+          {galleryPhotos.map((photo, index) => (
+            <button class:list={["gallery-item", { "gallery-extra": index >= 12 }]} type="button" data-image={photo} aria-label={`View property photo ${index + 1}`}>
+              <img src={photo} alt={`6420 NW 29th Street property photo ${index + 1}`} loading={index < 6 ? 'eager' : 'lazy'} />
+            </button>
+          ))}
+        </div>
+        <button class="show-gallery" id="show-gallery" type="button">View all 48 photos</button>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-card">
+          <img src="/images/arelysphoto.webp" alt="Arelys Catena" />
+          <div>
+            <p class="eyebrow">Your South Florida Realtor®</p>
+            <h2>Ready to see this home?</h2>
+            <p>Contact Arelys Catena for property details or to arrange a private showing.</p>
+            <div class="contact-links">
+              <a class="primary-link" href="tel:9542923366">Call (954) 292-3366</a>
+              <a class="secondary-link" href="mailto:arelyshomes@gmail.com?subject=6420%20NW%2029th%20Street">Email Arelys</a>
+            </div>
+            <small>Arelys R. Catena · License #3233056 · Century 21 Global Connections</small>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="lightbox">
+      <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+      <img src="" alt="Expanded property view" />
+    </dialog>
+
+    <footer><span>© 2026 Arelys Catena</span><span>Century 21 Global Connections</span></footer>
+
+    <script>
+      const showButton = document.querySelector('#show-gallery');
+      const extraPhotos = document.querySelectorAll('.gallery-extra');
+      showButton?.addEventListener('click', () => {
+        extraPhotos.forEach((photo) => photo.classList.add('gallery-visible'));
+        showButton.remove();
+      });
+
+      const lightbox = document.querySelector('#lightbox');
+      const lightboxImage = lightbox?.querySelector('img');
+      document.querySelectorAll('.gallery-item').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (lightbox instanceof HTMLDialogElement && lightboxImage instanceof HTMLImageElement && button instanceof HTMLElement) {
+            lightboxImage.src = button.dataset.image ?? '';
+            lightbox.showModal();
+          }
+        });
+      });
+      lightbox?.querySelector('.lightbox-close')?.addEventListener('click', () => {
+        if (lightbox instanceof HTMLDialogElement) lightbox.close();
+      });
+      lightbox?.addEventListener('click', (event) => {
+        if (event.target === lightbox && lightbox instanceof HTMLDialogElement) lightbox.close();
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { scroll-behavior: smooth; }
+  :global(body) { margin: 0; color: #111827; background: #f9fafb; font-family: Arial, Helvetica, sans-serif; }
+  :global(img) { display: block; max-width: 100%; }
+  :global(a) { color: inherit; }
+  .content-width { width: min(1180px, calc(100% - 3rem)); margin-inline: auto; }
+  .site-header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1rem clamp(1.5rem, 5vw, 4.5rem); color: #fff; background: #111827; }
+  .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+  .brand img { width: 3rem; height: 3rem; border: 2px solid #c59b27; border-radius: 50%; object-fit: cover; }
+  .brand strong, .brand small { display: block; }
+  .brand strong { font-size: 1.05rem; }
+  .brand small { margin-top: 0.15rem; color: #d1d5db; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .header-contact { color: #c59b27; font-size: 0.82rem; font-weight: 800; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; }
+  .hero { position: relative; min-height: 78vh; display: grid; align-items: end; overflow: hidden; color: #fff; }
+  .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-image { object-fit: cover; object-position: center; }
+  .hero-shade { background: linear-gradient(180deg, rgba(17,24,39,.08) 20%, rgba(17,24,39,.88) 100%); }
+  .hero-content { position: relative; z-index: 1; width: min(1180px, calc(100% - 3rem)); margin: 0 auto; padding: 5rem 0; }
+  .eyebrow { margin: 0 0 0.85rem; color: #c59b27; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  h1, h2 { margin-top: 0; letter-spacing: -0.045em; }
+  h1 { margin-bottom: 0.4rem; font-size: clamp(3rem, 8vw, 6.8rem); line-height: 0.92; }
+  h2 { margin-bottom: 1.25rem; font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.02; }
+  .location { margin: 0 0 1.4rem; color: #e5e7eb; font-size: clamp(1.1rem, 2vw, 1.55rem); }
+  .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem 1.4rem; margin-bottom: 2rem; font-size: 1rem; }
+  .hero-meta strong { color: #fff; font-size: 1.55rem; }
+  .hero-meta span { color: #e5e7eb; }
+  .primary-link, .secondary-link, .open-house a, .show-gallery { display: inline-flex; align-items: center; justify-content: center; gap: 0.7rem; min-height: 3.25rem; padding: 0.9rem 1.25rem; border: 1px solid #c59b27; border-radius: 0.75rem; font-weight: 800; text-decoration: none; transition: 160ms ease; }
+  .primary-link, .show-gallery { color: #111827; background: #c59b27; }
+  .primary-link:hover, .show-gallery:hover { background: #d4aa36; transform: translateY(-1px); }
+  .secondary-link { color: #111827; background: #fff; }
+  .open-house { display: flex; align-items: center; justify-content: center; gap: clamp(3rem, 12vw, 10rem); padding: 2rem 1.5rem; color: #fff; background: #1f2937; }
+  .open-house h2 { margin: 0; font-size: clamp(1.65rem, 3vw, 2.5rem); }
+  .open-house p:last-child { margin: 0.35rem 0 0; color: #d1d5db; }
+  .open-house a { color: #fff; }
+  .open-house a:hover { color: #111827; background: #c59b27; }
+  .overview { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: clamp(3rem, 8vw, 7rem); padding-block: clamp(5rem, 10vw, 8rem); }
+  .overview-copy > p:not(.eyebrow) { color: #4b5563; font-size: 1.05rem; line-height: 1.8; }
+  .facts { margin: 0; padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 1rem; background: #fff; box-shadow: 0 18px 45px rgba(17,24,39,.07); }
+  .facts div { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #e5e7eb; }
+  .facts div:last-child { border-bottom: 0; }
+  .facts dt { color: #6b7280; }
+  .facts dd { margin: 0; font-weight: 800; text-align: right; }
+  .feature-image { position: relative; height: min(76vh, 760px); color: #fff; overflow: hidden; }
+  .feature-image img { width: 100%; height: 100%; object-fit: cover; }
+  .feature-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,24,39,.82), rgba(17,24,39,.08) 70%); }
+  .feature-image > div { position: absolute; z-index: 1; left: max(1.5rem, calc((100% - 1180px) / 2)); bottom: clamp(2rem, 8vw, 6rem); max-width: 38rem; }
+  .video-section, .gallery-section { padding-block: clamp(5rem, 10vw, 8rem); }
+  .section-heading { margin-bottom: 2rem; }
+  .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 1rem; background: #111827; box-shadow: 0 20px 55px rgba(17,24,39,.16); }
+  .video-frame iframe { width: 100%; height: 100%; border: 0; }
+  .gallery-section { padding-top: 0; }
+  .gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
+  .gallery-heading p:last-child { color: #6b7280; }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
+  .gallery-item { aspect-ratio: 4 / 3; padding: 0; overflow: hidden; border: 0; border-radius: 0.65rem; background: #e5e7eb; cursor: zoom-in; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease; }
+  .gallery-item:hover img { transform: scale(1.025); }
+  .gallery-extra { display: none; }
+  .gallery-extra.gallery-visible { display: block; }
+  .show-gallery { margin: 2rem auto 0; cursor: pointer; }
+  .contact-section { padding: clamp(4rem, 10vw, 8rem) 1.5rem; background: #111827; }
+  .contact-card { width: min(960px, 100%); margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; align-items: center; gap: clamp(2rem, 6vw, 5rem); padding: clamp(1.5rem, 5vw, 3.5rem); border: 1px solid rgba(197,155,39,.35); border-radius: 1rem; color: #fff; background: #1f2937; }
+  .contact-card > img { width: 220px; aspect-ratio: 1; border: 3px solid #c59b27; border-radius: 50%; object-fit: cover; }
+  .contact-card > div > p:not(.eyebrow) { color: #d1d5db; font-size: 1.05rem; line-height: 1.65; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.75rem 0; }
+  .contact-card .secondary-link { color: #fff; background: transparent; }
+  .contact-card small { color: #9ca3af; }
+  dialog { max-width: min(92vw, 1400px); padding: 0; border: 0; border-radius: 0.75rem; background: transparent; }
+  dialog::backdrop { background: rgba(3,7,18,.92); }
+  dialog img { max-height: 88vh; border-radius: 0.5rem; }
+  .lightbox-close { position: fixed; top: 1rem; right: 1.25rem; width: 3rem; height: 3rem; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: #fff; background: rgba(17,24,39,.8); font-size: 2rem; cursor: pointer; }
+  footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem clamp(1.5rem, 5vw, 4.5rem); color: #9ca3af; background: #0b111e; font-size: 0.78rem; }
+  @media (max-width: 800px) {
+    .overview { grid-template-columns: 1fr; }
+    .open-house { align-items: flex-start; flex-direction: column; gap: 1.5rem; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .contact-card { grid-template-columns: 1fr; text-align: center; }
+    .contact-card > img { width: 160px; margin: 0 auto; }
+    .contact-links { justify-content: center; }
+  }
+  @media (max-width: 520px) {
+    .content-width, .hero-content { width: min(100% - 2rem, 1180px); }
+    .header-contact { display: none; }
+    .hero { min-height: 70vh; }
+    .hero-content { padding-bottom: 3rem; }
+    .hero-meta { gap: 0.55rem 1rem; }
+    .gallery { grid-template-columns: 1fr; }
+    .gallery-heading, footer { align-items: flex-start; flex-direction: column; }
+    .feature-image { height: 65vh; }
+  }
+  @media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } :global(*) { transition: none !important; } }
+</style>
