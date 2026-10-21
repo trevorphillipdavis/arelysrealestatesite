@@ -40,17 +40,33 @@ const galleryPhotos = [
       <section class="hero" aria-labelledby="property-title">
         <img class="hero-image" src={photos[44]} alt="Front exterior of 6420 NW 29th Street" fetchpriority="high" />
         <div class="hero-shade"></div>
-        <div class="hero-content">
-          <p class="eyebrow">For sale · MLS #B26090327</p>
-          <h1 id="property-title">6420 NW 29th Street</h1>
-          <p class="location">Sunrise, Florida 33313</p>
-          <div class="hero-meta">
-            <strong>$449,000</strong>
-            <span>2 beds</span>
-            <span>2 baths</span>
-            <span>1,282 sq. ft.</span>
+        <div class="hero-layout">
+          <div class="hero-content">
+            <p class="eyebrow">For sale · MLS #B26090327</p>
+            <h1 id="property-title">6420 NW 29th Street</h1>
+            <p class="location">Sunrise, Florida 33313</p>
+            <div class="hero-meta">
+              <strong>$449,000</strong>
+              <span>2 beds</span>
+              <span>2 baths</span>
+              <span>1,282 sq. ft.</span>
+            </div>
+            <a class="primary-link" href="#contact">Schedule a private showing <span aria-hidden="true">→</span></a>
           </div>
-          <a class="primary-link" href="#contact">Schedule a private showing <span aria-hidden="true">→</span></a>
+          <div class="hero-video" aria-labelledby="video-title">
+            <div class="hero-video-heading">
+              <p class="eyebrow">Property film</p>
+              <h2 id="video-title">Take a video tour</h2>
+            </div>
+            <div class="video-frame">
+              <iframe
+                src="https://edri-photography.aryeo.com/videos/01a156d6-598d-7266-98b6-d2436626537e"
+                title="Video tour of 6420 NW 29th Street"
+                loading="eager"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -83,21 +99,6 @@ const galleryPhotos = [
       <section class="feature-image" aria-label="Pool and backyard">
         <img src={photos[36]} alt="Backyard pool at 6420 NW 29th Street" loading="lazy" />
         <div><p class="eyebrow">Your private retreat</p><h2>Room to unwind under the South Florida sky.</h2></div>
-      </section>
-
-      <section class="video-section content-width" aria-labelledby="video-title">
-        <div class="section-heading">
-          <p class="eyebrow">Property film</p>
-          <h2 id="video-title">Take a video tour</h2>
-        </div>
-        <div class="video-frame">
-          <iframe
-            src="https://edri-photography.aryeo.com/videos/01a156d6-598d-7266-98b6-d2436626537e"
-            title="Video tour of 6420 NW 29th Street"
-            loading="lazy"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
       </section>
 
       <section class="gallery-section content-width" aria-labelledby="gallery-title">
@@ -185,7 +186,8 @@ const galleryPhotos = [
   .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
   .hero-image { object-fit: cover; object-position: center; }
   .hero-shade { background: linear-gradient(180deg, rgba(17,24,39,.08) 20%, rgba(17,24,39,.88) 100%); }
-  .hero-content { position: relative; z-index: 1; width: min(1180px, calc(100% - 3rem)); margin: 0 auto; padding: 5rem 0; }
+  .hero-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(400px, 1.1fr); align-items: end; gap: clamp(2rem, 5vw, 5rem); width: min(1280px, calc(100% - 3rem)); margin: 0 auto; padding: clamp(3rem, 7vw, 6rem) 0; }
+  .hero-content { min-width: 0; }
   .eyebrow { margin: 0 0 0.85rem; color: #c59b27; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
   h1, h2 { margin-top: 0; letter-spacing: -0.045em; }
   h1 { margin-bottom: 0.4rem; font-size: clamp(3rem, 8vw, 6.8rem); line-height: 0.92; }
@@ -214,11 +216,15 @@ const galleryPhotos = [
   .feature-image img { width: 100%; height: 100%; object-fit: cover; }
   .feature-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,24,39,.82), rgba(17,24,39,.08) 70%); }
   .feature-image > div { position: absolute; z-index: 1; left: max(1.5rem, calc((100% - 1180px) / 2)); bottom: clamp(2rem, 8vw, 6rem); max-width: 38rem; }
-  .video-section, .gallery-section { padding-block: clamp(5rem, 10vw, 8rem); }
+  .gallery-section { padding-block: clamp(5rem, 10vw, 8rem); }
   .section-heading { margin-bottom: 2rem; }
   .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 1rem; background: #111827; box-shadow: 0 20px 55px rgba(17,24,39,.16); }
   .video-frame iframe { width: 100%; height: 100%; border: 0; }
-  .gallery-section { padding-top: 0; }
+  .hero-video { align-self: center; padding: 1rem; border: 1px solid rgba(255,255,255,.24); border-radius: 1.25rem; background: rgba(17,24,39,.72); box-shadow: 0 24px 70px rgba(3,7,18,.42); backdrop-filter: blur(10px); }
+  .hero-video-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: .2rem .25rem .9rem; }
+  .hero-video-heading .eyebrow { margin: 0; }
+  .hero-video-heading h2 { margin: 0; color: #fff; font-size: clamp(1.2rem, 2vw, 1.75rem); letter-spacing: -.025em; }
+  .hero-video .video-frame { border: 1px solid rgba(255,255,255,.15); border-radius: .75rem; box-shadow: none; }
   .gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
   .gallery-heading p:last-child { color: #6b7280; }
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
@@ -241,6 +247,10 @@ const galleryPhotos = [
   .lightbox-close { position: fixed; top: 1rem; right: 1.25rem; width: 3rem; height: 3rem; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: #fff; background: rgba(17,24,39,.8); font-size: 2rem; cursor: pointer; }
   footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem clamp(1.5rem, 5vw, 4.5rem); color: #9ca3af; background: #0b111e; font-size: 0.78rem; }
   @media (max-width: 800px) {
+    .hero { min-height: auto; }
+    .hero-layout { grid-template-columns: 1fr; align-items: initial; padding-block: 2rem 3rem; }
+    .hero-content { order: 2; }
+    .hero-video { order: 1; }
     .overview { grid-template-columns: 1fr; }
     .open-house { align-items: flex-start; flex-direction: column; gap: 1.5rem; }
     .gallery { grid-template-columns: repeat(2, 1fr); }
@@ -249,11 +259,11 @@ const galleryPhotos = [
     .contact-links { justify-content: center; }
   }
   @media (max-width: 520px) {
-    .content-width, .hero-content { width: min(100% - 2rem, 1180px); }
+    .content-width, .hero-layout { width: min(100% - 2rem, 1180px); }
     .header-contact { display: none; }
-    .hero { min-height: 70vh; }
-    .hero-content { padding-bottom: 3rem; }
     .hero-meta { gap: 0.55rem 1rem; }
+    .hero-video { padding: .7rem; border-radius: 1rem; }
+    .hero-video-heading { align-items: flex-start; flex-direction: column; gap: .25rem; }
     .gallery { grid-template-columns: 1fr; }
     .gallery-heading, footer { align-items: flex-start; flex-direction: column; }
     .feature-image { height: 65vh; }
